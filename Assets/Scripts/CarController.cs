@@ -8,7 +8,7 @@ public class CarController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(this.gameObject, 8f);
+        Destroy(gameObject, 8f);
     }
 
     // Update is called once per frame

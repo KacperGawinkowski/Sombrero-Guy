@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KlaksonGang : MonoBehaviour
+public class HornSoundController : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {

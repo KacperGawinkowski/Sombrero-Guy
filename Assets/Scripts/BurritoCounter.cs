@@ -4,37 +4,37 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
 
-public class burritoCounterScript : MonoBehaviour
+public class BurritoCounter : MonoBehaviour
 {
-    public GameObject[] BURRITO;
-    public GameObject[] BURRITOBURRITO;
+    public GameObject[] burritoUI;
+    public GameObject[] burritoObject;
     public int gatheredBurrito;
 
     public GameObject blueScreenPrefab;
     private GameObject blueScreen;
 
-    public GameObject sigmusBledus;
+    public GameObject errorObject;
 
     public GameObject camera;
     public GameObject player;
 
-    public void addBurrito()
+    public void AddBurrito()
     {
         if (gatheredBurrito < 4)
         {
             gatheredBurrito += 1;
-            BURRITO[gatheredBurrito - 1].GetComponent<Image>().color = new Color32(255, 255, 255, 255);
+            burritoUI[gatheredBurrito - 1].GetComponent<Image>().color = new Color32(255, 255, 255, 255);
             if( gatheredBurrito != 4)
             {
-                BURRITO[gatheredBurrito].SetActive(true);
-                BURRITOBURRITO[gatheredBurrito].SetActive(true);
-                BURRITO[gatheredBurrito].GetComponent<Image>().color = new Color32(90, 90, 90, 110);
+                burritoUI[gatheredBurrito].SetActive(true);
+                burritoObject[gatheredBurrito].SetActive(true);
+                burritoUI[gatheredBurrito].GetComponent<Image>().color = new Color32(90, 90, 90, 110);
             }
-            setBurritoEffect();
+            SetBurritoEffect();
         }
     }
 
-    private void setBurritoEffect()
+    private void SetBurritoEffect()
     {
         switch (gatheredBurrito)
         {
@@ -53,7 +53,7 @@ public class burritoCounterScript : MonoBehaviour
                 blueScreen = Instantiate(blueScreenPrefab, GameObject.Find("Canvas").transform);
                 Time.timeScale = 0;
                 Destroy(blueScreen, 0.5f);
-                sigmusBledus.SetActive(true);
+                errorObject.SetActive(true);
 
                 foreach (var item in GameObject.FindGameObjectsWithTag("Enemy"))
                 {
@@ -94,15 +94,4 @@ public class burritoCounterScript : MonoBehaviour
                 break;
         }
     }
-
-    //1 burrito zmienia sterowanie DONE
-    //2 utrudnienie podglądu ekranu poprzez losowe niebieskie kwadraty na ekranie DONE
-    //3 3d kloc mhm DONE
-    //4 smietniki gonia gracza, a przeciwnicy maja stanac w miejscu
-    //5 creditsy DONE
-    //  Nagrac nagranie,pokazac cale menu 2 nieudane podejscia, udane podejscie,enjoy your meal, creditsy, chory siedzacy w lozku, 
-    //  pokazac jak wyjsc z aplikacji
-
-
-
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class unpauseBlueScreenScript : MonoBehaviour
+public class UnpauseBlueScreenScript : MonoBehaviour
 {
     void Update()
     {

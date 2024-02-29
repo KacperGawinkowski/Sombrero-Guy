@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class sigmaScript : MonoBehaviour
+public class SceneController : MonoBehaviour
 {
-    public int sigma;
+    public int sceneInex;
     void Update()
     {
         if(Input.GetMouseButtonDown(0))
         {
-            if(sigma == 1)
+            if(sceneInex == 1)
             {
                 SceneManager.LoadScene("MainMenuScene", LoadSceneMode.Single);
             }

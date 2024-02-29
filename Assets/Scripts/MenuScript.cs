@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class menuScript : MonoBehaviour
+public class MenuScript : MonoBehaviour
 {
     int triggerLvl = 0;
 
@@ -34,15 +34,15 @@ public class menuScript : MonoBehaviour
 
     public void HowToPlay()
     {
-        this.gameObject.transform.GetChild(3).gameObject.SetActive(true);
-        this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
-        this.gameObject.transform.GetChild(1).gameObject.SetActive(false);
-        this.gameObject.transform.GetChild(2).gameObject.SetActive(false);
+        gameObject.transform.GetChild(3).gameObject.SetActive(true);
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        gameObject.transform.GetChild(1).gameObject.SetActive(false);
+        gameObject.transform.GetChild(2).gameObject.SetActive(false);
     }
 
     private void changePlayButtonPosition()
     {
-        this.gameObject.transform.GetChild(2).gameObject.transform.position = new Vector3(Random.Range(0, 960), Random.Range(0, 540), Random.Range(0, 0));
+        gameObject.transform.GetChild(2).gameObject.transform.position = new Vector3(Random.Range(0, 960), Random.Range(0, 540), Random.Range(0, 0));
     }
 
     public void onBack()
@@ -55,10 +55,10 @@ public class menuScript : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            this.gameObject.transform.GetChild(3).gameObject.SetActive(false);
-            this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
-            this.gameObject.transform.GetChild(1).gameObject.SetActive(true);
-            this.gameObject.transform.GetChild(2).gameObject.SetActive(true);
+            gameObject.transform.GetChild(3).gameObject.SetActive(false);
+            gameObject.transform.GetChild(0).gameObject.SetActive(true);
+            gameObject.transform.GetChild(1).gameObject.SetActive(true);
+            gameObject.transform.GetChild(2).gameObject.SetActive(true);
         }
     }
 }

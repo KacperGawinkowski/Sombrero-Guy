@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Block : MonoBehaviour
+public class Building : MonoBehaviour
 {
-
-    public void poka()
+    public void Show()
     {
         foreach (Transform item in transform)
         {
@@ -17,7 +16,7 @@ public class Block : MonoBehaviour
         }
     }
 
-    public void ukryj()
+    public void Hide()
     {
         foreach (Transform item in transform)
         {
